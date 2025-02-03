@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | MyUniCorner</title>
+    <style>
+        #wrapper{
+            width: 100%;
+            /* background-color: black; */
+            display: grid;
+            grid-template-rows: 300px;
+            grid-template-columns: 3fr 4fr;
+            gap: 20px;
+            padding: 20px;
+        }
+        #stats{
+            /* background-color: red; */
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            /* padding: 20px; */
+        }
+        .statBox{
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            font-weight: 600;
+        }
+        #graph{
+            background-image: url('https://www.researchgate.net/publication/322835859/figure/fig3/AS:588971461599232@1517433147848/Growth-of-Student-Enrollment-at-EPS-High-School.png');
+            background-size:cover;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <div id="wrapper">
+        <div id="stats">
+            <div id="noOfStudents" class="statBox">Total Students <br> <h1><%= data.totalStudents%></h1></div>
+            <div id="noOfTeachers" class="statBox">Total Teachers <br> <h1><%= data.totalTeachers%></h1></div>
+            <div id="noOfCourses" class="statBox">Total Courses <br> <h1><%= data.totalCourses%></h1></div>
+            <div id="noOfCampuses" class="statBox">Total Campuses <br> <h1><%= data.totalCampuses%></h1></div>
+        </div>
+        <div id="graph">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments | MyUniCorner</title>
+    <style>
+        #wrapper, #table{
+            width: 96%;
+            margin: 40px 2%;
+            padding : 30px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        #searchBars{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        label{
+            font-size: 1.5rem;
+            margin: 0 20px;
+        }
+        select{
+            padding: 5px;
+            width: 300px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Departments</h1>
+    <div id="wrapper">
+        <h2>Search for Department Details</h2><br>
+        <div id="searchBars">
+            <div id="campusSearch">
+                <label for="campuses">Campus: </label>
+                <select name="campuses" id="campuses" placeholder="Select Campus">
+                    <option value="" disabled selected>Select Campus</option>
+                </select>
+            </div>
+            <div id="departmentSearch">
+                <label for="departments">Department: </label>
+                <select name="departments" id="departments" aria-placeholder="Select Department">
+                    <option value="" disabled selected>Select Department</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="table">
+        <h2>Present Departments</h2>
+    </div>
+</body>
+</html>

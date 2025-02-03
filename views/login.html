@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | MyUniCorner</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body{
+    background-color: #cecec5;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+#title{
+    color: white;
+}
+        #head{
+            background-color: #202b13;
+            min-height: 100px;
+            height: fit-content;
+            width: 100%;
+            padding: 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .btn{
+    color: black;
+    background-color: #D4D4D4;
+    font-size: 1.5rem;
+    text-align: center;
+    height:fit-content;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 5px;
+}
+.btn:hover{
+    background:#12160d;
+    color: white;
+    border: 1px solid white;
+}
+#formBox{
+    width: 80vw;
+    max-width: 900px;
+    margin: 20px auto;
+    height: fit-content;
+    min-height: 500px;
+    background-color:white;
+    border-radius: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+#signIn{
+    padding: 30px;
+    border-radius: 50px;
+    min-width: 50%;
+}
+#register{
+    min-height: 70%;
+    text-align: center;
+    color: white;
+    padding: 30px;
+    border-radius: 50px;
+    background-color:#202b13;
+    padding-bottom: 80px;
+}
+.heading{
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    
+}
+fieldset{
+    border: none;
+}
+label{
+    font-size: 1.5rem;
+}
+input{
+    font-size: 1.1rem;
+    background-color: #d4d4d4;
+    margin: 10px;
+    width: 80%;
+    height: 30px;
+    border:none;
+    padding: 20px;
+}
+#forgot{
+    margin-top: -20px;
+    color: red;
+}
+p{
+    margin: 40px 10px;
+}
+#submit{
+    margin: 20px;
+    padding: 10px;
+
+    background-color: #202b13;
+    color:white;
+}
+#submit:hover{
+    background-color:#94c274;
+    color:#12160d;
+    border: 1px solid #12160d;
+}
+
+@media(min-width: 1000px){
+    #formBox{
+        flex-direction: row;
+    }
+    #register{
+        width: 45%;
+        padding: 50px;
+        padding-top: 80px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header id="head">
+        <a href="/">
+            <h1 id="title">MyUniCorner</h1>
+        </a>
+        <a href="/" class="btn">Go Back</a>
+    </header>
+    <main>
+        <div id="formBox">
+            <div id="signIn">
+
+                <h1 class="heading">Sign In</h1>
+                <form action="/login" method="post">
+                    <fieldset>
+                        <label for="userId">User-Id</label><br>
+                        <input type="text" name="userId" id="userId" placeholder="Enter your User-Id here" required>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <label for="password">Password</label>
+                        <br>
+                        <input type="password" name="password" id="password" placeholder="Enter your password here" required>
+                        <br><a href="" id="forgot">Forgot Password?</a>
+                    </fieldset>
+                    <br>
+                    <input type="submit" value="Login" class= 'btn' id = 'submit'>
+                </form>
+            </div>
+            <div id="register">
+                <h1 class="heading">Register</h1>
+                <p>Want to make your university managed digitally. Buy our services by registering your academic institution</p>
+                <br><a href="/register"  class="btn" id ='reg'>Register</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome | MyUniCorner - Access to your university at one place.</title>
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #cecec5;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+#container{
+    width: 150vw;
+    min-height: 300px;
+    height: calc(100vh + 7rem);
+    border-radius: 50px;
+    position: absolute;
+    z-index: -1;
+    background-color: #202b13;
+    transform: rotateZ(-10deg) translateY(-15vh);
+    transform-origin: 0% 100%;
+}
+#head-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: calc(90vh + 5rem);
+}
+#head{
+    padding: 50px;
+    color: white;
+}
+#title{
+    color: white;
+    font-size: 3em;
+    padding: 10px;
+}
+#tagLine{
+    padding: 10px 0 20px 0;
+}
+
+ul{
+    margin: -80px auto 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction:column;
+}
+li{
+    color: black;
+    width: calc(200px - 2rem);
+    list-style-type: none;
+    /* border: 20px solid black; */
+    background-color: #D4D4D4;
+    height: 40px;
+    text-align: center;
+    margin: calc(20px - 0.5rem) 30px;
+    justify-content: stretch;
+}
+a{
+    color:inherit;
+    padding:0px calc(40% - 20px) 10px calc(40% - 30px);
+    text-decoration: none;
+    font-size: 1.7em;
+    /* background-color: red; */
+}
+li:hover{
+    background:#12160d;
+    color: white;
+    border: 1px solid white;
+    font-weight: 600;
+}
+#content{
+    padding: 30px;
+}
+.heading{
+    font-size: 5rem;
+}
+.desc{
+    padding: calc(3vw + 20px);
+    padding-top: 20px;
+    font-size: 1.5rem;
+}
+    </style>
+  </head>
+  <body>
+      <div id="container"></div>
+      <div id="head-wrapper">
+
+          <div id="head">
+              <h1 id="title">My<br />Uni<br />Corner</h1>
+              <h2 id="tagLine">Access to your university at one place.</h2>
+            </div>
+            <div id="nav">
+                <ul>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                  </ul>
+              </div>
+          </div>
+    </div>
+    <div id="content">
+      <div id="about">
+        <h3 class="heading">About</h3>
+        <p class="desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+          consequuntur dolore commodi voluptate. Ratione perspiciatis voluptatem
+          non illo dolorem eligendi tempore nemo molestiae amet, doloremque,
+          magnam nihil quibusdam veniam aut. Aut at accusantium veritatis harum
+          reprehenderit quisquam quod impedit, quaerat, incidunt doloremque
+          tenetur officia tempore consequatur natus iusto, asperiores illum
+          ratione praesentium cum libero. Hic architecto velit quos illo<br><br> Quod animi,
+          perspiciatis dolores deserunt eaque consequatur, recusandae distinctio
+          quo ratione eum assumenda optio doloremque dolor provident
+          accusantium odit tenetur suscipit dolores, corporis quidem temporibus
+          nemo quo perspiciatis explicabo doloremque consequuntur! A?
+        </p>
+      </div>
+      <div id="mission">
+        <h3 class="heading">Our Mission</h3>
+        <p class="desc">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Exercitationem est hic et libero, perspiciatis reprehenderit nesciunt
+          porro epellat, nemo ullam odio voluptatum cum
+          fugariam. Quam suscipit ea voluptatum
+          perferendis placeat molestiae quos, ipsa consequatur, ut, odit id
+          deserunt maiores vitae exercitationem unde voluptas? Amet molestiae
+          ducimus velit obcaecati voluptatibus tempore vitae repudiandae dolore
+          repellendus! Ex rem voluptas officiis saepe! Molestias placeat<br/><br>
+          labore iste voluptatem accusamus amet eveniet excepturi sit distinctio
+          iure ea magni, hic nemo porro debitis ex illo maiores et incidunt
+          iusto tempore quaerat magnam quasi velit earum. Nihil? Voluptates
+          aliquid necessitatibus deleniti sit alias reiciendis iusto labore
+          dolore, distinctio, vero molestiae inventore aut, veniam explicabo
+          voluptatum perferendis doloribus sapiente vel! Corrupti rem vero
+          eaque. Rerum dicta mollitia suscipit?
+        </p>
+      </div>
+    
+  </body>
+</html>

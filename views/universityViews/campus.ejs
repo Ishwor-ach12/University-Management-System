@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campuses | MyUniCorner</title>
+    <style>
+      * {
+        font-weight: 600;
+      }
+      #create {
+        width: 96%;
+        background-color: white;
+        height: 100px;
+        border-radius: 5px;
+        margin: 20px 2%;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #campusList{
+        width: 96%;
+        background-color: white;
+        border-radius: 5px;
+        margin: 20px 2%;
+        padding: 10px 20px;
+      }
+      #create #button #createButton,
+      #createCampus {
+        width: fit-content;
+        padding: 15px 20px;
+        background-color: #202b13;
+        color: white;
+        height: fit-content;
+      }
+      #create #button #createButton:hover,
+      #createCampus:hover {
+        background-color: #94c274;
+        color: #12160d;
+        border: 2px solid #12160d;
+      }
+      #createCampus {
+        border-radius: 5px;
+        font-size: 1.2rem;
+        width: 300px;
+        padding: 10px;
+        margin: 10px calc(100% - 320px);
+      }
+      #formBox {
+        transition: all 0.5s ease-in-out;
+        display: none;
+        width: 96%;
+        background-color: white;
+        margin: -20px 2% 20px 2%;
+        padding: 20px;
+      }
+      fieldset {
+        border: none;
+        margin: 10px;
+      }
+      legend {
+        margin: 15px 0;
+        font-size: 1.4rem;
+      }
+      label {
+        display: inline-block;
+        width: 200px;
+        margin: 10px 20px;
+        font-size: 1.2rem;
+      }
+      .newCampus {
+        width: 400px;
+      }
+      table{
+        width: 96%;
+        margin: 40px 2%;
+        border-spacing: 0;
+        border: 1px solid black;
+        border-radius: 5px;
+        text-align: center;
+      }
+      tr{
+        background-color:#e2e2e2;
+      }
+      tr:hover{
+        background-color:#94c274;
+      }
+      th, td{
+        padding: 10px;
+        margin: 0;
+      }
+      th{
+        border: 1px solid black;
+        background-color: #202b13;
+        color: white;
+        font-size: 1.2rem;
+      }
+      td{
+        border-bottom: 1px solid black;
+        background-color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Campuses</h1>
+    <div id="create">
+      <div id="campusNumber">
+        <h3>
+          Total Number of Campuses : <br /><h1><%= data.count%></h1>
+        </h3>
+      </div>
+      <div id="button">
+        <input
+          type="button"
+          value="+ Create New Campus"
+          id="createButton"
+          onclick="toggle()"
+        />
+      </div>
+    </div>
+    <div id="formBox">
+      <form action="" method="post">
+        <h1>Create a new Campus</h1>
+        <br />
+        <fieldset>
+          <label for="campusName">Campus Name: </label
+          ><input type="text" id="campusName" name="campusName" class="newCampus" required/>
+        </fieldset>
+        <hr />
+        <fieldset>
+          <legend>Campus Location</legend>
+          <label for="campusName">Country: </label
+          ><input type="text" id="country" name="country" class="newCampus" required/><br />
+          <label for="campusName">State: </label
+          ><input type="text" id="state" name='state' class="newCampus" required/><br />
+          <label for="campusName">City: </label
+          ><input type="text" id="city" name="city" class="newCampus" required/><br />
+        </fieldset>
+        <button value="Create" id="createCampus" onclick=creation()/>Create</button>
+      </form>
+    </div>
+    <div id="campusList">
+      <br><br>
+      <h1>Present Campuses</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Campus name</th>
+            <th>Campus Code</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+
+        </tbody>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script>
+      fetch(window.location.href + '/api/campuses')
+          .then(res => res.json())
+          .then((data) =>{
+            const tableBody = document.getElementById('tableBody')
+            for(let i = 0; i< data.length; i++){
+                let row = document.createElement('tr');
+                row.innerHTML = '<td>' + data[i].campusName + '</td><td>' + data[i].campusCode + '</td><td>' + data[i].country + '</td><td>' + data[i].state + '</td><td>' + data[i].city + '</td>';
+                tableBody.appendChild(row);
+            }
+          })
+      const toggle = (e) =>{
+          const formBox = document.getElementById("formBox")
+          const btn = document.getElementById("createButton")
+          if(formBox.style.display === 'none'){
+            formBox.style.display = 'block'
+            btn.value = "- Discard"
+          }
+          else{
+            formBox.style.display = 'none'
+            btn.value = "+ Create New Campus"
+          }
+      }
+      document.getElementsByTagName('form').action = window.location.href
+      const creation = () =>{
+        console.log("hhhhhhhhhhh")
+        document.getElementById('formBox').style.display = 'none'
+        document.getElementsByTagName('form').submit()
+        fetch(location.href).then(res=>res.json).then(user=>alert(user[0].message))
+        
+      }
+    </script>
+  </body>
+</html>
