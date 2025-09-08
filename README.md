@@ -1,4 +1,4 @@
-````markdown
+
 # 🎓 University Management System
 
 A **comprehensive web application** built using the **MVC pattern** with **Node.js, Express.js, HTML, EJS, and CSS**.  
@@ -133,7 +133,3 @@ university-management-system/
 * Ishwor Acharya
 
 ---
-
-
-Would you like me to also add **shields.io badges (Node.js, Express, MongoDB, License, etc.)** at the very top for an even more eye-catching look?
-```
